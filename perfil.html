@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #141414;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .perfil-container {
+      background-color: #1f1f1f;
+      padding: 30px;
+      border-radius: 15px;
+      width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .perfil-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .perfil-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: auto;
+      border: 3px solid red;
+      object-fit: cover;
+    }
+
+    .perfil-form input,
+    .perfil-form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+    }
+
+    .perfil-form button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .perfil-form button:hover {
+      background-color: darkred;
+    }
+
+    .perfil-volver {
+      display: block;
+      margin-top: 15px;
+      text-align: center;
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .perfil-volver:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="perfil-container">
+    <div class="perfil-header">
+      <img src="img/user.png" alt="Avatar" class="perfil-avatar" />
+      <h2>Editar Perfil</h2>
+    </div>
+    <form class="perfil-form">
+      <input type="text" placeholder="Nombre de usuario" value="Julian Rodriguez" />
+      <select>
+        <option selected>Idioma: Español</option>
+        <option>Inglés</option>
+        <option>Portugués</option>
+      </select>
+      <select>
+        <option selected>Tema: Oscuro</option>
+        <option>Claro</option>
+      </select>
+      <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="index.html" class="perfil-volver">← Volver al inicio</a>
+  </div>
+
+</body>
+</html>

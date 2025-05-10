@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración de Cuenta</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #e50914;
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .section-title {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #e50914;
+      padding-bottom: 10px;
+    }
+    .section-container {
+      background-color: #1f1f1f;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    }
+    .form-container input, .form-container select, .form-container button {
+      padding: 14px;
+      margin: 10px 0;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background-color: #222;
+      color: white;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+    }
+    .form-container button {
+      background-color: #e50914;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .form-container input:focus, .form-container select:focus, .form-container button:hover {
+      background-color: #f40612;
+    }
+    .subscription-methods {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .subscription-card {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 25px;
+      width: 30%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .subscription-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    }
+    .subscription-card h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .subscription-card p {
+      color: #bbb;
+      margin-bottom: 20px;
+    }
+    .subscription-card button {
+      background-color: #e50914;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    .subscription-card button:hover {
+      background-color: #f40612;
+    }
+    .profile-section {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      align-items: center;
+    }
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #444;
+      display: block;
+      border: 4px solid #fff;
+    }
+    .account-info {
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+    .account-info .change {
+      color: #e50914;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .account-info p {
+      margin: 10px 0;
+    }
+    .change-password, .change-email {
+      color: #e50914;
+      cursor: pointer;
+    }
+    .change-password:hover, .change-email:hover {
+      text-decoration: underline;
+    }
+    .submit-btn-container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Configuración de Cuenta</h1>
+
+    <!-- Perfil y configuración personal -->
+    <div class="section-container">
+      <div class="section-title">Perfil</div>
+      <div class="profile-section">
+        <div>
+          <img src="mimg/Furia.webp" alt="Foto de perfil" class="profile-picture">
+        </div>
+        <div>
+          <p class="account-info"><strong>Nombre:</strong> Julian Rodriguez</p>
+          <p class="account-info"><strong>Correo:</strong> JulianRodriguez@email.com</p>
+          <p class="account-info"><strong>Fecha de Nacimiento:</strong> 17 de febrero del 2003</p>
+          <p class="account-info">
+            <span class="change-password">Cambiar Contraseña</span> | 
+            <span class="change-email">Cambiar Correo</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Métodos de suscripción -->
+    <div class="section-container">
+      <div class="section-title">Método de Suscripción</div>
+      <div class="subscription-methods">
+        <div class="subscription-card">
+          <h3>Plan Básico</h3>
+          <p>1 pantalla, SD</p>
+          <button>Seleccionar</button>
+        </div>
+        <div class="subscription-card">
+          <h3>Plan Estándar</h3>
+          <p>2 pantallas, HD</p>
+          <button>Seleccionar</button>
+        </div>
+        <div class="subscription-card">
+          <h3>Plan Premium</h3>
+          <p>4 pantallas, UHD</p>
+          <button>Seleccionar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configuración de la cuenta -->
+    <div class="section-container">
+      <div class="section-title">Configuración de Cuenta</div>
+      <div class="form-container">
+        <input type="password" placeholder="Nueva Contraseña">
+        <input type="email" placeholder="Nuevo Correo Electrónico">
+        <button>Actualizar Información</button>
+      </div>
+    </div>
+
+    <div class="submit-btn-container">
+      <button class="submit-btn">Guardar Cambios</button>
+    </div>
+  </div>
+
+</body>
+</html>

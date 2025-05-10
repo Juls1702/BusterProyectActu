@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Películas Favoritas</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #141414;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #e50914;
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .form-container {
+      background-color: #333;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+    .form-container input, .form-container button {
+      padding: 12px;
+      margin: 10px 0;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #333;
+      background-color: #222;
+      color: white;
+      font-size: 1rem;
+    }
+    .form-container button {
+      background-color: #e50914;
+      border: none;
+      cursor: pointer;
+    }
+    .form-container button:hover {
+      background-color: #f40612;
+    }
+    .movie-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .movie-item {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .movie-item:hover {
+      transform: scale(1.05);
+    }
+    .movie-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .movie-item h3 {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    .movie-item p {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 5px;
+    }
+    .add-movie-container {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mis Películas Favoritas</h1>
+
+    <!-- Formulario para añadir una nueva película -->
+    <div class="form-container">
+      <h3>Añadir una nueva película</h3>
+      <input type="text" id="movieTitle" placeholder="Título de la película" />
+      <input type="text" id="movieDescription" placeholder="Descripción" />
+      <button id="addMovieBtn">Añadir Película</button>
+    </div>
+
+    <!-- Lista de películas -->
+    <div class="movie-list" id="movieList">
+      
+    </div>
+
+    <!-- Contenedor de películas -->
+    <div class="add-movie-container">
+      <p style="text-align: center;">¡Añade tus películas favoritas!</p>
+    </div>
+  </div>
+
+  <script>
+    // Array para almacenar las películas favoritas
+    const favoriteMovies = [
+      { title: "Jumanji", description: "Un mundo diferente.", imageUrl: "mimg/jumanjithenext.webp" },
+      { title: "War", description: "Una guerra Letal", imageUrl: "mimg/war.jpg" },
+      { title: "Intensamente 2", description: "Vida de las emociones", imageUrl: "mimg/intensamente.webp" }
+    ];
+
+    const movieList = document.getElementById('movieList');
+    const movieTitleInput = document.getElementById('movieTitle');
+    const movieDescriptionInput = document.getElementById('movieDescription');
+    const addMovieBtn = document.getElementById('addMovieBtn');
+
+    // Función para renderizar las películas en la interfaz
+    function renderMovies() {
+      movieList.innerHTML = '';
+      favoriteMovies.forEach(movie => {
+        const movieItem = document.createElement('div');
+        movieItem.classList.add('movie-item');
+        movieItem.innerHTML = `
+          <img src="${movie.imageUrl}" alt="${movie.title}">
+          <h3>${movie.title}</h3>
+          <p>${movie.description}</p>
+        `;
+        movieList.appendChild(movieItem);
+      });
+    }
+
+    // Función para añadir una película
+    function addMovie() {
+      const title = movieTitleInput.value;
+      const description = movieDescriptionInput.value;
+      if (title && description) {
+        favoriteMovies.push({ title, description, imageUrl: "https://via.placeholder.com/250x375?text=Imagen+no+disponible" });
+        renderMovies();
+        movieTitleInput.value = '';
+        movieDescriptionInput.value = '';
+      } else {
+        alert("Por favor, complete ambos campos.");
+      }
+    }
+
+    // Evento para añadir una película al hacer clic en el botón
+    addMovieBtn.addEventListener('click', addMovie);
+
+    // Mostrar las películas al cargar la página
+    renderMovies();
+  </script>
+</body>
+</html>
