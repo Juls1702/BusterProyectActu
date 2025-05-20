@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>arcane - Interfaz</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0,0,0,0.2)), url('img/Arcane.jpg') no-repeat center center/cover;
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .content {
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      max-width: 600px;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00d8ff;
+    }
+
+    .info {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .description {
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      background: white;
+      color: black;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn.trailer {
+      background: #444;
+      color: white;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      left: 5%;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Estilo del modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .modal-content iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: red;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="title">Arcane</div>
+    <div class="info">2024 • 18 Capitulos • Acción, SciFi, Animacion • 16+</div>
+    <div class="description">
+      Con las dispares ciudades de Piltover y Zaun como telón de fondo, dos hermanas luchan en bandos opuestos de una guerra entre tecnologías mágicas y creencias enfrentadas.
+    </div>
+    <div class="buttons">
+      <button class="btn" id="verAhoraBtn">▶ Ver Ahora</button>
+      <button class="btn trailer" id="trailerBtn">🎬 Tráiler</button>
+    </div>
+  </div>
+
+  <div class="footer">Sugerencias • Detalles • Extras</div>
+
+  <!-- Modal -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="cerrarModal()">✖</button>
+      <iframe id="videoFrame" src="" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    const verAhoraBtn = document.getElementById('verAhoraBtn');
+    const trailerBtn = document.getElementById('trailerBtn');
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoFrame');
+
+    // Usan el mismo video
+    const videoURL = "https://youtu.be/hsffPST-x1k?si=_3aYe2RDUSN2wirh";
+
+    verAhoraBtn.addEventListener('click', () => {
+      iframe.src = videoURL;
+      modal.style.display = 'flex';
+    });
+
+    trailerBtn.addEventListener('click', () => {
+      iframe.src = videoURL;
+      modal.style.display = 'flex';
+    });
+
+    function cerrarModal() {
+      modal.style.display = 'none';
+      iframe.src = ""; // Detiene el video
+    }
+  </script>
+
+</body>
+</html>
