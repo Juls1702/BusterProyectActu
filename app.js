@@ -890,7 +890,7 @@ const movies = [{
             genre11: "horor",
             year: 2024,
             rate: 9.8,
-            url: "themanor.html",
+            url: "intensamente2.html",
             tppr: "popular",
             msot: "movie" 
         },
