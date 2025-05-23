@@ -55,12 +55,12 @@ const slider_load = () => {
         slider_btn[2].style.background = "rgb(184, 184, 184, .1)";
     }, 0000);
     setTimeout(() => {
-        header.style.background = "url('img/121214.jpg') no-repeat center center/cover";
-        header_dur.innerText = "1h 57min";
-        header_gen.innerHTML = `<i class="fas fa-star"></i>8.5
-        <span>Comedia / Accion / Sci-Fi</span>`;
-        header_title.innerText = "Ant-Man";
-        header_pra.innerText = "Ant-Man es una película de superhéroes estadounidense de 2015 basada en los personajes de Marvel Comics del mismo nombre: Scott Lang y Hank Pym. Producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures, es la duodécima película del Universo Cinematográfico de Marvel (MCU). La película fue dirigida por Peyton Reed a partir de un guión de los equipos de guionistas de Edgar Wright, Joe Cornish y Adam McKay.";
+        header.style.background = "url('img/Arcane.jpg') no-repeat center center/cover";
+        header_dur.innerText = "18 Capitulos";
+        header_gen.innerHTML = `<i class="fas fa-star"></i>10
+        <span>Animacion / Accion / Sci-Fi</span>`;
+        header_title.innerText = "Arcane";
+        header_pra.innerText = "Con las dispares ciudades de Piltover y Zaun como telón de fondo, dos hermanas luchan en bandos opuestos de una guerra entre tecnologías mágicas y creencias enfrentadas.";
         slider_btn[0].style.background = "rgb(184, 184, 184, .1)";
         slider_btn[1].style.background = "#fff";
         slider_btn[2].style.background = "rgb(184, 184, 184, .1)";
@@ -274,26 +274,26 @@ const movies = [{
             ph1080: "img/the-ghazi-attack-poster.webp",
         },
         {
-            id: 35,
-            img: "mimg/comndo.jpg",
-            title: "Commando",
+           id: 35,
+            img: "mimg/Arcanepromo.jpg",
+            title: "Arcane",
             letter: "c",
             genre1: "action",
             genre2: "none",
             genre3: "none",
-            genre4: "biography",
+            genre4: "",
             genre5: "animation",
             genre6: "none",
-            genre7: "documentary",
+            genre7: "",
             genre8: "none",
-            genre9: "18+",
+            genre9: "",
             genre10: "scifi",
-            genre11: "horor",
-            year: 2020,
-            rate: 9.3,
-            url: "themanor.html",
+            genre11: "",
+            year: 2024,
+            rate: 10,
+            url: "Arcane.html",
             tppr: "trend",
-            msot: "movie"
+            msot: "serie"
         },
         {
             id: 34,
