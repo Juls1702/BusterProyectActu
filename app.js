@@ -241,9 +241,9 @@ video_1[0].addEventListener('click', () => {
     plays.classList.remove('bi-play-fill');
 });
 video_1[1].addEventListener('click', () => {
-    videos.src = "img/Antman.mp4";
+    videos.src = "img/Arcanevideo.mp4";
     videos.play();
-    title_video[0].innerText = "Ant-Man: El hombre hormiga";
+    title_video[0].innerText = "Arcane";
     plays.classList.add('bi-pause-fill');
     plays.classList.remove('bi-play-fill');
 });
