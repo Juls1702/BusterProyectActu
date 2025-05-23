@@ -139,6 +139,56 @@
     .submit-btn-container {
       text-align: center;
     }
+
+    /* Modal personalizado */
+    #modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #modal.show {
+      display: flex;
+    }
+    #modal .modal-content {
+      background-color: #fff;
+      color: #000;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+    #modal .modal-content h2 {
+      margin-top: 0;
+    }
+    #modal .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: #888;
+      cursor: pointer;
+    }
+    #modal input, #modal select, #modal button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+    }
+    #modal button {
+      background-color: #e50914;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -172,17 +222,17 @@
         <div class="subscription-card">
           <h3>Plan Básico</h3>
           <p>1 pantalla, SD</p>
-          <button>Seleccionar</button>
+          <button class="btn-seleccionar" data-plan="Básico" data-desc="1 pantalla, SD">Seleccionar</button>
         </div>
         <div class="subscription-card">
           <h3>Plan Estándar</h3>
           <p>2 pantallas, HD</p>
-          <button>Seleccionar</button>
+          <button class="btn-seleccionar" data-plan="Estándar" data-desc="2 pantallas, HD">Seleccionar</button>
         </div>
         <div class="subscription-card">
           <h3>Plan Premium</h3>
           <p>4 pantallas, UHD</p>
-          <button>Seleccionar</button>
+          <button class="btn-seleccionar" data-plan="Premium" data-desc="4 pantallas, UHD">Seleccionar</button>
         </div>
       </div>
     </div>
@@ -201,6 +251,44 @@
       <button class="submit-btn">Guardar Cambios</button>
     </div>
   </div>
+
+  <!-- Modal de suscripción -->
+  <div id="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Plan</h2>
+      <p id="modalDescription">Descripción del plan</p>
+      <input type="text" placeholder="Nombre completo">
+      <input type="email" placeholder="Correo electrónico">
+      <select>
+        <option disabled selected>Método de pago</option>
+        <option>Tarjeta de crédito</option>
+        <option>PayPal</option>
+        <option>PSE</option>
+      </select>
+      <button>Confirmar suscripción</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(plan, desc) {
+      document.getElementById("modalTitle").textContent = `Plan ${plan}`;
+      document.getElementById("modalDescription").textContent = desc;
+      document.getElementById("modal").classList.add("show");
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.remove("show");
+    }
+
+    document.querySelectorAll(".btn-seleccionar").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const plan = btn.getAttribute("data-plan");
+        const desc = btn.getAttribute("data-desc");
+        openModal(plan, desc);
+      });
+    });
+  </script>
 
 </body>
 </html>
